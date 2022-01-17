@@ -12,5 +12,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
+	function accordion() {
+		const accordionButton = document.querySelectorAll('.accordion-button')
+		const accordionBody = document.querySelectorAll('.accordion-body')
+		
+		accordionButton.forEach((item) => {
+			item.addEventListener('click', function () {
+				accordionBody.forEach((item) => {
+					item.addEventListener('click', function () {
+						this.classList.add('show')
+					})
+				})
+			})
+		})
+	}
+
 	menu()
+	accordion()
 })
