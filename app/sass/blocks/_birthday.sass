@@ -1,0 +1,26 @@
+.birthday-box
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: center
+	height: 250px
+	background: url(../images/static/bg-birthday.jpg) center / cover no-repeat
+	+radius
+	color: $textcolor
+	text-decoration: none
+	&::after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: #fff
+		opacity: 0.30
+	&__title
+		font-size: 36px
+		font-weight: 700
+		text-align: center
+		text-transform: uppercase
+		z-index: 1
+		color: $textcolor

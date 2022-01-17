@@ -1,0 +1,46 @@
+.table
+	width: 100%
+	tbody
+		tr
+			display: block
+			border-bottom: 1px solid $light-border
+			padding: 4px 0
+			td
+				&:first-child
+					width: 100%!important
+				&:nth-child(2)
+					min-width: 100px
+					vertical-align: top
+					padding-top: 5px
+				&:nth-child(3)
+					vertical-align: top
+				em
+					color: #3d5b99
+
+.table-title
+	border-bottom: 1px solid #CBAA60
+	color: $accent
+	padding-bottom: 10px
+	font-weight: 400!important
+	margin-bottom: 0!important
+
+.table-button
+	display: block
+	min-width: 100px
+	padding: 6px 18px 5px
+	background-color: $accent
+	text-align: center
+	color: #fff
+	text-decoration: none
+	text-transform: uppercase
+	font-weight: 700
+	font-size: 13px
+	+radius
+	&:hover
+		background-color: #0069be
+		color: #fff
+
+hr
+	background-color: $light-border
+	margin: 13px 0
+	opacity: 1

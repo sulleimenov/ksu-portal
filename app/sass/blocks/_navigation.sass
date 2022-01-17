@@ -1,0 +1,58 @@
+.nav-block
+	+shadow
+	+radius
+	overflow: hidden
+	margin-bottom: 30px
+	&__header
+		background-color: $accent
+		color: #fff
+		height: 65px
+		display: flex
+		align-items: center
+		padding: 0 25px
+		font-size: 18px
+		font-weight: 700
+		line-height: 1.30
+	&__body
+		display: flex
+		flex-direction: column
+		padding: 15px 25px
+		min-height: 230px
+		a
+			display: block
+			border-bottom: 1px solid $light-border
+			padding: 6px 0
+			text-decoration: none
+			color: $textcolor
+			&:last-child
+				border-bottom: none
+
+.resources
+	&__grid
+		display: grid
+		grid-template-columns: 1fr 1fr 1fr
+		grid-column-gap: 30px
+		grid-row-gap: 30px
+		margin-bottom: 60px
+		@include media-breakpoint-down(lg)
+			grid-template-columns: 1fr 1fr
+		@include media-breakpoint-down(md)
+			grid-template-columns: 1fr
+
+.reference
+	display: block
+	padding: 35px 25px
+	gap: 10px
+	text-align: center
+	text-decoration: none
+	+shadow
+	+radius
+	// margin-bottom: 30px
+	&__title
+		font-size: 16px
+		font-weight: 700
+		text-transform: uppercase
+		color: $textcolor
+		margin-bottom: 10px
+	&__desc
+		color: #505050

@@ -1,0 +1,35 @@
+.offer
+	// background-color: $accent
+	background-color: #f7f7f7
+	// position: relative
+	// color: #fff
+	// &::before
+	// 	position: absolute
+	// 	content: ''
+	// 	opacity: 0.4
+	// 	background-color: #161c2d
+	// 	top: 0
+	// 	bottom: 0
+	// 	left: 0
+	// 	right: 0
+	&__flex
+		position: relative
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		height: 400px
+		z-index: 1
+	&__image
+		display: flex
+		align-items: center
+		height: 100%
+		@include media-breakpoint-down(md)
+			display: none
+		img
+			+radius
+	&__title
+		margin-bottom: 25px
+		font-weight: 700
+		// font-size: 46px
+	&__subtitle
+		margin-bottom: 0
