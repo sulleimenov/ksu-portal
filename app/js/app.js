@@ -2,7 +2,6 @@
 // import '~/app/libs/mmenu/dist/mmenu.js'
 
 document.addEventListener('DOMContentLoaded', () => {
-
 	function menu() {
 		const buttonMenu = document.querySelector('.menu-burger')
 		const buttonMenuContent = document.querySelector('.nav')
@@ -13,16 +12,42 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function accordion() {
-		const accordionButton = document.querySelectorAll('.accordion-button')
-		const accordionBody = document.querySelectorAll('.accordion-body')
-		
-		accordionButton.forEach((item) => {
-			item.addEventListener('click', function () {
-				accordionBody.forEach((item) => {
-					item.addEventListener('click', function () {
-						this.classList.add('show')
-					})
-				})
+		const accordionButtons = document.querySelectorAll('.table-accordion-button')
+
+		accordionButtons.forEach((item) => {
+			item.addEventListener('click', (event) => {
+				let accCollapse = item.nextElementSibling
+				
+				if (!item.classList.contains('collapsing')) {
+					if (!item.classList.contains('show')) {
+						accCollapse.style.display = 'block'
+						let accHeight = accCollapse.clientHeight
+
+						setTimeout(() => {
+							accCollapse.style.height = accHeight + 'px'
+							accCollapse.style.display = ''
+						}, 1)
+
+						accCollapse.classList = 'table-accordion-body collapsing'
+
+						setTimeout(() => {
+							accCollapse.classList = 'table-accordion-body collapse show'
+						}, 300)
+					} else {
+						accCollapse.classList = 'table-accordion-body collapsing'
+
+						setTimeout(() => {
+							accCollapse.style.height = '0px'
+						}, 1)
+
+						//
+						setTimeout(() => {
+							accCollapse.classList = 'table-accordion-body collapse'
+							accCollapse.style.height = ''
+						}, 300)
+					}
+					item.classList.toggle('show')
+				}
 			})
 		})
 	}

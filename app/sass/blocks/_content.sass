@@ -56,12 +56,34 @@ hr
 	margin: 13px 0
 	opacity: 1
 
-.accordion
-	&-item
+.table-accordion
+	padding: 10px 0
+	border-bottom: 1px solid $light-border
+	&:last-child
+		border-bottom: none
 	&-button
+		position: relative
+		cursor: pointer
+		padding: 8px 0
 		&::after
+			position: absolute
+			right: 0
 			background-repeat: no-repeat
+			background-position: center
+			background-size: 12px
+			margin-left: auto
 			content: ''
+			width: 20px
+			height: 20px
+			transition: transform .2s ease-in-out
+		&:not(.collapsed):after
+			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23869AB8'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E")
+		&.show::after
+			transform: rotate(-180deg)
 	&-body
-		&:not(.show)
+		&.collapse:not(.show)
 			display: none
+		&.collapsing
+			height: 0
+			overflow: hidden
+			transition: height .35s ease
