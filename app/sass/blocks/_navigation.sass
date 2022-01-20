@@ -3,27 +3,45 @@
 	+radius
 	overflow: hidden
 	margin-bottom: 30px
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: center
+	position: relative
+	min-height: 310px
+	&::after
+		content: ''
+		background-color: #161c2d
+		opacity: 0.4
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
 	&__header
-		background-color: $accent
+		// background-color: $accent
+		position: relative
 		color: #fff
-		height: 65px
 		display: flex
 		align-items: center
-		padding: 0 25px
+		padding: 20px 25px 5px
 		font-size: 18px
 		font-weight: 700
 		line-height: 1.30
+		z-index: 3
 	&__body
 		display: flex
 		flex-direction: column
 		padding: 15px 25px
 		min-height: 230px
 		a
-			display: block
-			border-bottom: 1px solid $light-border
-			padding: 6px 0
+			display: inline-block
+			z-index: 3
+			// border-bottom: 1px solid $light-border
+			padding: 4px 0
 			text-decoration: none
-			color: $textcolor
+			color: #fff
+			&:hover
+				color: $yellow
 			&:last-child
 				border-bottom: none
 
@@ -56,3 +74,19 @@
 		margin-bottom: 10px
 	&__desc
 		color: #505050
+
+.resources-list
+	&__header,
+	&__item
+		padding: 6px 0
+		border-bottom: 1px solid $light-border
+		font-size: 14px
+	&__header
+		text-transform: uppercase
+		font-weight: 700
+	&__item
+		display: block
+		text-decoration: none
+		color: $textcolor
+		&:hover
+			color: $yellow

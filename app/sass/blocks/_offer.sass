@@ -1,24 +1,29 @@
 .offer
-	// background-color: $accent
-	background-color: #f7f7f7
-	// position: relative
-	// color: #fff
-	// &::before
-	// 	position: absolute
-	// 	content: ''
-	// 	opacity: 0.4
-	// 	background-color: #161c2d
-	// 	top: 0
-	// 	bottom: 0
-	// 	left: 0
-	// 	right: 0
+	background-color: $accent
+	position: relative
+	margin-top: -79px
+	color: #fff
+	&::before
+		position: absolute
+		content: ''
+		opacity: 0.4
+		background-color: #161c2d
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
 	&__flex
 		position: relative
 		display: flex
 		align-items: center
 		flex-wrap: wrap
-		height: 400px
+		height: 450px
 		z-index: 1
+		padding-top: 40px
+		@include media-breakpoint-down(lg)
+			height: 350px
+		@include media-breakpoint-down(md)
+			height: 310px
 	&__image
 		display: flex
 		align-items: center
@@ -28,8 +33,13 @@
 		img
 			+radius
 	&__title
-		margin-bottom: 25px
 		font-weight: 700
+		margin-bottom: 0
 		// font-size: 46px
 	&__subtitle
-		margin-bottom: 0
+		display: inline-block
+		border-top: 40px
+		margin-bottom: 25px
+		text-transform: uppercase
+		font-weight: 400
+		border-bottom: 1px solid #fff

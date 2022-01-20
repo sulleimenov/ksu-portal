@@ -1,8 +1,9 @@
 .header
 	position: relative
-	background-color: #fff
+	z-index: 3
+	background-color: transparent
 	padding: 20px 0
-	+shadow
+	border-bottom: 1px solid rgba(#fff, 0.30)
 	&__inner
 		display: flex
 		align-items: center
@@ -17,13 +18,15 @@
 		border: none
 		background-color: #fff
 		margin-right: 25px
+		background-color: transparent
+		color: #fff
 
 .lang
 	text-transform: uppercase
 	&__item
 		position: relative
 		text-decoration: none
-		color: $textcolor
+		color: #fff
 		margin-right: 15px
 		&:last-child
 			margin-right: 0
@@ -31,9 +34,9 @@
 				content: ''
 				width: 1px
 				height: 14px
-				background-color: $textcolor
+				background-color: #fff
 				position: absolute
-				top: 3px
+				top: 2px
 				left: -10px
 
 .nav
@@ -73,10 +76,11 @@
 	&__item
 		display: block
 		margin-right: 20px
-		color: $textcolor
+		color: #fff
 		text-decoration: none
 		@include media-breakpoint-down(sm)
 			margin-bottom: 8px
+			color: $textcolor
 			&:last-child
 				margin-bottom: 0
 		&:last-child
@@ -94,7 +98,7 @@
 		display: block
 		width: 18px
 		height: 2px
-		background-color: $textcolor
+		background-color: #fff
 		&:first-child
 			top: 0
 		&:nth-child(2)
