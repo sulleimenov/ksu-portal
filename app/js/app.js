@@ -1,7 +1,30 @@
-// // Import vendor jQuery plugin example
-// import '~/app/libs/mmenu/dist/mmenu.js'
+// import $ from 'jquery'
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+// window.jQuery = $
+// window.$ = $
 
 document.addEventListener('DOMContentLoaded', () => {
+	gsap.registerPlugin(ScrollTrigger)
+	gsap.config({ nullTargetWarn: false })
+
+	function animate() {
+		const offerTitle = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.offer__title',
+			},
+		})
+		const offerSubTitle = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.offer__subtitle',
+			},
+		})
+
+		offerTitle.from('.offer__title', { y: 100, opacity: 0, duration: 0.5 })
+		offerSubTitle.from('.offer__subtitle', { y: 100, opacity: 0, duration: 0.5 })
+	}
+
 	function menu() {
 		const buttonMenu = document.querySelector('.menu-burger')
 		const buttonMenuContent = document.querySelector('.nav')
@@ -54,4 +77,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	menu()
 	accordion()
+	animate()
 })
