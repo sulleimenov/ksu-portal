@@ -1,0 +1,110 @@
+.header
+	position: relative
+	z-index: 3
+	background-color: transparent
+	padding: 20px 0
+	border-bottom: 1px solid rgba(#fff, 0.30)
+	&__inner
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&__left
+		display: flex
+		align-items: center
+	&__rigth
+		display: flex
+		align-items: center
+	&__search
+		border: none
+		background-color: #fff
+		margin-right: 25px
+		background-color: transparent
+		color: #fff
+
+.header-inner
+	background-color: $accent
+
+.lang
+	text-transform: uppercase
+	&__item
+		position: relative
+		text-decoration: none
+		color: #fff
+		margin-right: 15px
+		&:last-child
+			margin-right: 0
+			&::before
+				content: ''
+				width: 1px
+				height: 14px
+				background-color: #fff
+				position: absolute
+				top: 2px
+				left: -10px
+
+.nav
+	display: flex
+	margin-left: 30px
+	&.show
+		opacity: 1
+		visibility: visible
+		transform: translateY(0)
+	@include media-breakpoint-down(sm)
+		position: absolute
+		flex-direction: column
+		top: 70px
+		right: 10px
+		background-color: #fff
+		z-index: 1
+		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.14)
+		+radius
+		padding: 15px 20px
+		margin-left: 0
+		opacity: 0
+		visibility: hidden
+		transform: translateY(-3px)
+		transition: all 100ms ease
+		&::after
+			filter: drop-shadow(0 -1px 0 rgba(0, 0, 0, 0.10))
+			bottom: 100%
+			right: 8px
+			border: 7px solid transparent
+			content: ''
+			height: 0
+			width: 0
+			position: absolute
+			pointer-events: none
+			border-bottom-color: #fff
+			margin-left: 0
+	&__item
+		display: block
+		margin-right: 20px
+		color: #fff
+		text-decoration: none
+		@include media-breakpoint-down(sm)
+			margin-bottom: 8px
+			color: $textcolor
+			&:last-child
+				margin-bottom: 0
+		&:last-child
+			margin-right: 0
+
+.menu-burger
+	position: relative
+	width: 18px
+	height: 16px
+	margin-left: 35px
+	@include media-breakpoint-up(sm)
+		display: none
+	span
+		position: absolute
+		display: block
+		width: 18px
+		height: 2px
+		background-color: #fff
+		&:first-child
+			top: 0
+		&:nth-child(2)
+			top: 7px
+		&:last-child
+			bottom: 0

@@ -1,0 +1,17 @@
+.breadcrumb
+	padding-left: 0
+	list-style-type: none
+	padding: 10px 0
+	margin-bottom: 0
+	font-size: 13px
+	&__item
+		color: $gray
+		display: inline
+		a
+			text-decoration: none
+			color: $gray
+		&+.breadcrumb__item
+			padding-left: 7px
+		&+.breadcrumb__item::before
+			content: '>'
+			padding-right: 7px

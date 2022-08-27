@@ -1,0 +1,48 @@
+.offer
+	background-color: $accent
+	position: relative
+	margin-top: -79px
+	color: #fff
+	&::before
+		position: absolute
+		content: ''
+		opacity: 0.4
+		background-color: #161c2d
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+	&__flex
+		position: relative
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		height: 450px
+		z-index: 1
+		padding-top: 40px
+		@include media-breakpoint-down(lg)
+			height: 350px
+		@include media-breakpoint-down(md)
+			height: 310px
+	&__image
+		display: flex
+		align-items: center
+		height: 100%
+		@include media-breakpoint-down(md)
+			display: none
+		img
+			+radius
+	&__title
+		font-weight: 700
+		margin-bottom: 0
+		@include media-breakpoint-up(xl)
+			font-size: 4rem
+	&__subtitle
+		display: inline-block
+		border-top: 40px
+		margin-bottom: 25px
+		text-transform: uppercase
+		font-weight: 400
+		border-bottom: 1px solid #fff
+		@include media-breakpoint-down(lg)
+			font-size: 16px

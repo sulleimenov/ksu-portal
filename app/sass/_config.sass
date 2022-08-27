@@ -1,0 +1,78 @@
+// USER VARIABLES SECTION
+
+$accent: #02508f // Accent Color
+$fontsize: 15px // Body Font Size
+$textcolor: #161616 // Text Color
+$lineheight: 1.45 // Document Line Height
+$userfont: Roboto, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+// color
+$dark: #1b2a4e
+$yellow: #ffc147
+$gray: #bfbfbf
+$body-bg: #f9fbfd
+$light-border: #e7e7e8
+
+// margin
+$margin: 50px
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+@import 'node_modules/bootstrap/scss/tables.scss'
+// @import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('Roboto', normal, 400, '../fonts/Roboto-Regular.ttf')
+@include font('Roboto', italic, 400, '../fonts/Roboto-Italic.ttf')
+@include font('Roboto', normal, 700, '../fonts/Roboto-Bold.ttf')
+@include font('Roboto', italic, 700, '../fonts/Roboto-BoldItalic.ttf')
+
+// GENERAL CSS SETTINGS
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+a
+	transition: all 100ms ease-out
+	&:hover
+		color: $yellow
+
+img
+	max-width: 100%
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	background-color: $body-bg
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden

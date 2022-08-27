@@ -1,0 +1,95 @@
+.nav-block
+	+shadow
+	+radius
+	overflow: hidden
+	margin-bottom: 30px
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: center
+	position: relative
+	min-height: 310px
+	&::after
+		content: ''
+		background-color: #161c2d
+		opacity: 0.6
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		transition: opacity 0.2s ease
+	&:hover::after
+		opacity: 0.5
+	&__header
+		// background-color: $accent
+		position: relative
+		color: #fff
+		display: flex
+		align-items: center
+		padding: 20px 25px 5px
+		font-size: 18px
+		font-weight: 700
+		line-height: 1.30
+		z-index: 3
+	&__body
+		display: flex
+		flex-direction: column
+		padding: 15px 25px
+		min-height: 230px
+		a
+			display: inline-block
+			z-index: 3
+			// border-bottom: 1px solid $light-border
+			padding: 4px 0
+			text-decoration: none
+			color: #fff
+			&:hover
+				color: $yellow
+			&:last-child
+				border-bottom: none
+
+.resources
+	&__grid
+		display: grid
+		grid-template-columns: 1fr 1fr 1fr
+		grid-column-gap: 30px
+		grid-row-gap: 30px
+		margin-bottom: 60px
+		@include media-breakpoint-down(lg)
+			grid-template-columns: 1fr 1fr
+		@include media-breakpoint-down(md)
+			grid-template-columns: 1fr
+
+.reference
+	display: block
+	padding: 35px 25px
+	gap: 10px
+	text-align: center
+	text-decoration: none
+	+shadow
+	+radius
+	// margin-bottom: 30px
+	&__title
+		font-size: 16px
+		font-weight: 700
+		text-transform: uppercase
+		color: $textcolor
+		margin-bottom: 10px
+	&__desc
+		color: #505050
+
+.resources-list
+	&__header,
+	&__item
+		padding: 6px 0
+		border-bottom: 1px solid $light-border
+		font-size: 14px
+	&__header
+		text-transform: uppercase
+		font-weight: 700
+	&__item
+		display: block
+		text-decoration: none
+		color: $textcolor
+		&:hover
+			color: $yellow

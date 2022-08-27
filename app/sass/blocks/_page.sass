@@ -1,0 +1,81 @@
+.page-sidebar
+	padding: 30px 0
+	+shadow
+	+radius
+	@include media-breakpoint-down(lg)
+		margin-bottom: 30px
+	@include media-breakpoint-down(sm)
+		padding: 15px 0
+	&__header
+		margin-bottom: 25px
+		text-transform: uppercase
+		font-weight: 700
+	&__body
+		a
+			display: block
+			padding: 6px 30px
+			color: $textcolor
+			text-decoration: none
+			font-size: 14px
+			position: relative
+			@include media-breakpoint-down(sm)
+				padding: 6px 15px
+			&::after
+				content: ''
+				position: absolute
+				left: 30px
+				right: 30px
+				bottom: 0
+				height: 1px
+				background-color: #eeeeee
+				@include media-breakpoint-down(sm)
+					left: 15px
+					right: 15px
+			&:last-child::after
+				display: none
+			&:hover
+				color: $accent
+			&.active
+				color: $accent
+				font-weight: 700
+				border-left: 2px solid $accent
+				padding-left: calc( 30px - 2px )
+				@include media-breakpoint-down(sm)
+					padding-left: calc( 15px - 2px )
+
+.page-content
+	+shadow
+	+radius
+	&__header
+		position: relative
+		padding: 30px
+		font-weight: 700
+		font-size: 26px!important
+		margin-bottom: 0
+		@include media-breakpoint-down(sm)
+			padding: 15px
+			font-size: 19px!important
+		&::after
+			content: ''
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 0
+			width: 100%
+			height: 1px
+			background-color: #eee
+	&__body
+		padding: 30px
+		+content
+		@include media-breakpoint-down(sm)
+			padding: 15px
+		&>h2:first-child
+			margin-top: 0
+		&>h3:first-child
+			margin-top: 0
+		&>h4:first-child
+			margin-top: 0
+		&>h5:first-child
+			margin-top: 0
+		&>h6:first-child
+			margin-top: 0
